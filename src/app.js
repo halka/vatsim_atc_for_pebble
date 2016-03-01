@@ -2,7 +2,7 @@ var UI = require('ui');
 var ajax = require('ajax');
 var URL = 'http://exp.rw12.net/vatsim/gen_json.php';
 
-var getStations = function(data){
+var getStationList = function(data){
   var items = [];
   for(var i = 0; i < data.length; i++){
     if(data[i][3].toString() == 'ATC'){
@@ -23,7 +23,7 @@ ajax(
     type: 'json'
   },
   function(data) {
-    var stations = getStations(data);
+    var stations = getStationList(data);
     var resultsMenu = new UI.Menu({
     sections: [{
       title: 'VATSIM ATC Stations',
@@ -31,6 +31,17 @@ ajax(
     }]  
   });
   resultsMenu.show();
+  resultsMenu.on('select', function(e){
+    if(data[e.itemIndex][3].toString() == 'ATC'){
+    var controller = data[e.itemIndex][0];
+    var detailCard = new UI.Card({
+    title:controller,
+    subtitle:'sub',
+    body:'body'
+    });
+      detailCard.show();
+    }
+  });
   },
   function(error) {
     // Failure!
