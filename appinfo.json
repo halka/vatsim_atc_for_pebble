@@ -28,11 +28,6 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
-            },
-            {
-                "file": "images/Screen Shot 2014-10-26 at 18.51.16.png",
-                "name": "IMAGES_SCREEN_SHOT_2014_10_26_AT_18_51_16_PNG",
-                "type": "bitmap"
             }
         ]
     },
@@ -44,7 +39,7 @@
     ],
     "uuid": "6ccc7ddd-932f-4712-b81f-e9179e4ef10e",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "2.1",
     "watchapp": {
         "hiddenApp": false,
         "watchface": false

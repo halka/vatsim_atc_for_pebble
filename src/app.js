@@ -24,9 +24,9 @@ var getStationDetails = function(data){
       var station_name = data[i][0].toString();
       var freq = data[i][4].toString();
       details.push({
-        title:station_name,
-        subtitle:freq,
-        body:data[i][2].toString()+'('+data[i][1].toString()+')\n'+data[i][35]
+        title: station_name,
+        subtitle: freq,
+        body: data[i][2].toString()+'\n('+data[i][1].toString()+')\n'+data[i][35]
       });
     }
   }
@@ -48,11 +48,11 @@ ajax(
   resultsMenu.show();
     
   resultsMenu.on('select', function(e){
-    //var controller = data[e.itemIndex][0];
     var detailCard = new UI.Card({
-    title:getStationDetails(data)[e.itemIndex].title,
-    subtitle:getStationDetails(data)[e.itemIndex].subtitle,
-    body:getStationDetails(data)[e.itemIndex].body
+    title: getStationDetails(data)[e.itemIndex].title,
+    subtitle: getStationDetails(data)[e.itemIndex].subtitle,
+    body: getStationDetails(data)[e.itemIndex].body,
+    scrollable: true
     });
       detailCard.show();
   });
